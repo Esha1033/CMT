@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.MainContainer {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sideBar {
+    width: 250px;
+    height: 100%;
+    background-color: lightgray;
+    position: fixed;
+}
+
+.fa-bars {
+    font-size: 24px;
+}
+
+.mainContent {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    /* height: fit-content; */
+    /* background-color: red; */
+}
+
+.Logo {
+    color: black;
+    font-size: 28px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.navItemsBox {
+    margin-top: 100px;
+    padding: 5px;
+}
+
+.navItemsBoxMob {
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.navItems {
+    background-color: white;
+}
+
+.headerNav {
+    display: none;
+    position: sticky;
+    width: 100%;
+    height: 50px;
+    background-color: aqua;
+}
+
+.innerHeader {
+    width: 95%;
+    height: inherit;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+}
+
+.headerLogo {
+    margin-top: auto;
+}
+
+.headerLogo p{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#dashboard, #ExternalCon, #ConReqs, #ConAdms, #AllCons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.statBox {
+    display: flex;
+    background-color: rgb(230, 230, 230);
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    border-radius: 20px;
+    /* border: 1px solid black; */
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+}
+
+
+
+@media screen and (max-width : 1024px) {
+    
+    .headerNav {
+        display: block;
+    }
+
+    .sideBar {
+        display: none;
+    }
+
+    .mainContent {
+        margin: 0;
+        width: 100%;
+        height: fit-content;
+    }
+
+}

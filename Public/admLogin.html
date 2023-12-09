@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="Assets/CSS/admLogin.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="Assets/JS/admLogin.js"></script>
+
+</head>
+<body onload="checkLogin();">
+    
+<div class="wrapper">
+  <div class="title-text">
+    <div class="title login">Admin Login</div>
+  </div>
+  <div class="form-container">
+    
+    <div class="form-inner">
+      <form action="#" class="login">
+        
+        <div class="field">
+          <input type="text" id="admEmail" placeholder="Email Address" required>
+        </div>
+
+        <div class="field">
+          <input type="password" id="admPass" placeholder="Password" required>
+        </div>
+        
+        <div id="myloginbtnBox" class="field btn">
+          <div class="btn-layer"></div>
+          <input id="myloginbtn" type="button" value="Login">
+        </div>
+
+        <div style="display: none;" id="myloggedBox" class="field btn">
+          <div class="btn-layer"></div>
+          <input onclick="DirectLogin();" type="button" value="Login">
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.headerNav {
+    width: 100%;
+    height: 50px;
+    background-color: aqua;
+}
+
+.innerHeader {
+    width: 95%;
+    height: inherit;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+}
+
+.headerLogo {
+    margin-top: auto;
+}
+
+.headerLogo p{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.navItems > a {
+    align-items: center;
+    margin-left: 20px;
+}

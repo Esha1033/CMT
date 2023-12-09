@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>CMT Home</title>
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="Assets/JS/index.js"></script>
+
+    <link rel="stylesheet" href="Assets/CSS/common.css">
+    <link rel="stylesheet" href="Assets/CSS/index.css">
+
+</head>
+<body onload="checkLogin();" ng-app="myModule" ng-controller="myController" ng-init="fetchExtCons();">
+    
+
+    <nav class="headerNav mb-5">
+
+        <div class="innerHeader">
+
+            <div class="headerLogo">
+                <p>CM Toolkit</p>
+            </div>
+
+            <div class="navItems">
+
+                <a href="#" class="navLinks">Home</a>
+                <a href="#" class="navLinks">About</a>
+                <a href="#" class="navLinks">Docs</a>
+                <a href="#" class="navLinks">Contact</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <div class="container mb-5">
+
+        <div class="row g-5">
+
+            <div class="col-md-7">
+
+                <div class="conferenceMarquee">
+
+                    <a ng-repeat="obj in extCons" target="_blank" href="{{obj.conLink}}">{{obj.conName}}</a>
+
+                </div>
+
+            </div>
+                
+            <div class="col-md-5">
+
+                <div class="loginForm">
+
+                    <div class="loginFormHeader">
+
+                        <p>CMT Login</p>
+
+                    </div>
+
+                    <form class="p-3" enctype="multipart/form-data">
+
+                        <div class="mb-3">
+                            <label for="loginAuthEmail" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="loginAuthEmail" name="loginAuthEmail">
+                            <div id="loginEmailErr" class="form-text"></div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="loginAuthPass" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="loginAuthPass" name="loginAuthPass">
+                            <div id="loginPassErr" class="form-text"></div>
+                        </div>
+                        
+                        <input style="width: 100%;" id="loginAuthBtn" type="button" class="btn btn-primary" value="Login">
+                        <input style="width: 100%;display: none;" id="AlreadyLoggedInBtn" type="button" class="btn btn-primary" value="Login">
+                        
+                    </form>
+    
+                    <div id="lowerDivLogin" class="row p-3">
+    
+                        <div class="col-6">
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#frgtPass" >Forgot Password ?</a>
+                        </div>
+    
+                        <div class="col-6">
+                            <p class="text-end">New To CMT ? <a href="/register">Register</a> </p>
+                        </div>
+    
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MODALS -->
+
+
+    <div class="modal fade" id="frgtPass" tabindex="-1" aria-labelledby="frgtPassLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="frgtPassLabel">Forgot Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body">
+                  
+                    <div class="mb-3">
+                        <label for="passFrgtEmail" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="passFrgtEmail" name="loginAuthEmail">
+                        <div id="FrgtEmailErr" class="form-text"></div>
+                    </div>
+
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" id="passFrgtBtn" class="col-12 btn btn-primary">Reset Password</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- MODAL END -->
+
+
+</body>
+</html>
